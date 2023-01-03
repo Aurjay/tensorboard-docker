@@ -1,13 +1,13 @@
 #!/bin/bash
-sh build.sh
+# sh build.sh
 
 docker rm --force "tensorboard"
 
 docker run \
     -d \
-    -v <absolute_path_to_runs_directory>:/app/runs/:ro \
+    -v /mnt/c/Users/dgn/Documents/GitHub/dd/tensorboard-docker/training \
     -p 6006:6006 \
     --restart always \
-    -w "/app/" \
+    # -w "/app/" \
     --name "tensorboard" \
     schafo/tensorboard
